@@ -5,7 +5,7 @@ const pg = require("pg");
 
 const client = new pg.Client(
   process.env.DATABASE_URL ||
-    "postgres://localhost/acme_deparments_employees_db"
+    "postgres://localhost/acme_departments_employees_db"
 );
 
 app.use(express.json());
@@ -86,7 +86,7 @@ const init = async () => {
         id SERIAL PRIMARY KEY,
         name VARCHAR(100) NOT NULL
       );
-      
+
       CREATE TABLE employees(
         id SERIAL PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
