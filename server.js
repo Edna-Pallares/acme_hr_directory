@@ -24,14 +24,15 @@ const init = async () => {
   await client.query(SQL);
   console.log("tables created");
   SQL = `
-      INSERT INTO deparments(name) VALUES('SQL');
-      INSERT INTO deparments(name) VALUES('Express');
-      INSERT INTO deparments(name) VALUES('Shopping');
-      INSERT INTO employees(txt, department, department_id) VALUES();
-      INSERT INTO employees(txt, department, department_id) VALUES();
-      INSERT INTO employees(txt, department, department_id) VALUES();
-      INSERT INTO employees(txt, department, department_id) VALUES();
-      INSERT INTO employees(txt, department, department_id) VALUES();
+      INSERT INTO deparments(name) VALUES('Finance');
+      INSERT INTO deparments(name) VALUES('Operations');
+      INSERT INTO deparments(name) VALUES('Marketing');
+
+      INSERT INTO employees(name, department_id) VALUES(Lionel Messi);
+      INSERT INTO employees(name, department_id) VALUES(Robert Lewandowski);
+      INSERT INTO employees(name, department_id) VALUES(Kylian Mbappe);
+      INSERT INTO employees(name, department_id) VALUES(Mohamed Salah);
+      INSERT INTO employees(name, department_id) VALUES(Cristiano Ronaldo);
     `;
   await client.query(SQL);
   console.log("data seeded");
