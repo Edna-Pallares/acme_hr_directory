@@ -98,9 +98,9 @@ const init = async () => {
   await client.query(SQL);
   console.log("tables created");
   SQL = `
-      INSERT INTO deparments(name) VALUES('Human Resources');
-      INSERT INTO deparments(name) VALUES('Operations');
-      INSERT INTO deparments(name) VALUES('Marketing');
+      INSERT INTO departments(name) VALUES('Human Resources');
+      INSERT INTO departments(name) VALUES('Operations');
+      INSERT INTO departments(name) VALUES('Marketing');
 
       INSERT INTO employees(name, department_id) VALUES('Lionel Messi', (SELECT id FROM departments WHERE name='Marketing'));
       INSERT INTO employees(name, department_id) VALUES('Robert Lewandowski', (SELECT id FROM departments WHERE name='Operations'));
@@ -110,6 +110,7 @@ const init = async () => {
     `;
   await client.query(SQL);
   console.log("data seeded");
+  const port = process.env.port || 3000
   app.listen(port, () => console.log(`listening on port ${port}`));
 };
 
